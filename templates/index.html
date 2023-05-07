@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Calculator</title>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="icon" type="image/x-icon" href="assets\icons\calculator.ico">
+        
+        <meta charset="UTF-8">
+        <meta name="author" content="SpecialSpicy">
+        <meta name="keywords" content="Calculate, Calculator">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Python Calculator Website, made by SpecialSpicy">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <md-card ng-repeat="it in products.catalog" flex="22" flex-sm="46" flex-xs="80" ng-class="{shaded:$mdMedia('xs') }"></md-card>
+        
+    <title>Python Calculator</title>
   </head>
   <body>
-    <h1>Calculator</h1>
-    <form action="/calculate" method="post">
-      <input type="number" name="num1" placeholder="Enter first number">
-      <input type="number" name="num2" placeholder="Enter second number">
-      <br><br>
-      <select name="operation">
-        <option value="add">Addition</option>
-        <option value="subtract">Subtraction</option>
-        <option value="multiply">Multiplication</option>
-        <option value="divide">Division</option>
-      </select>
-      <br><br>
-      <input type="submit" value="Calculate">
-    </form>
+    <div class="container">
+    <h1 class="name">Calculator</h1>
+      <form method="POST">
+        <input class="num1" type="text" name="num1" placeholder="Enter first number">
+        <input class="num2" type="text" name="num2" placeholder="Enter second number">
+        <br>
+        <button class="plus" type="submit" name="operation" value="+">+</button>
+        <button class="minus" type="submit" name="operation" value="-">-</button>
+        <button class="times" type="submit" name="operation" value="*">*</button>
+        <button class="divide" type="submit" name="operation" value="/">/</button>
+        <button class="reset" type="reset">Reset</button>
+      </form>
+      {% if result %}
+      <p class="result">Result: {{ result }}</p>
+      {% endif %}
+    
+    </div>
   </body>
 </html>
+
+

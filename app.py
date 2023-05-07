@@ -6,22 +6,24 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/calculate', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def calculate():
-    operation = request.form['operation']
-    num1 = int(request.form['num1'])
-    num2 = int(request.form['num2'])
+    if request.method == 'POST':
+        operation = request.form['operation']
+        num1 = int(request.form['num1'])
+        num2 = int(request.form['num2'])
 
-    if operation == 'add':
-        result = num1 + num2
-    elif operation == 'subtract':
-        result = num1 - num2
-    elif operation == 'multiply':
-        result = num1 * num2
-    elif operation == 'divide':
-        result = num1 / num2
-
-    return render_template('result.html', result=result)
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '*':
+            result = num1 * num2
+        elif operation == '/':
+            result = num1 / num2
+        return render_template('index.html', result=result)
+    else:
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
