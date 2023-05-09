@@ -1,18 +1,8 @@
-@font-face {
-    font-family: 'Digital7';
-    src: url('assets/fonts/Digital7-rg1mL.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
 html{
     background-color: 	#090011;
     box-sizing: border-box;
     scroll-behavior: smooth;
     overflow-x: hidden;
-  }
-body {
-    font-family: 'Digital7', sans-serif;
   }
 
 .title{
