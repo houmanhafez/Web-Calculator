@@ -1,29 +1,36 @@
+@font-face {
+    font-family: 'Digital7';
+    src: url('assets/fonts/Digital7-rg1mL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 html{
-  background-color: 	#090011;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+    background-color: 	#090011;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+body {
+    font-family: 'Digital7', sans-serif;
+  }
 
-.name{
-  position: relative;
-  font-size: 45px;
-  font-weight: bold;
-  top: 15vh;
-  left: 41.3vw;
-  color: #c0d6e4;
-  font-family:"Candara",sans-serif;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+.title{
+    position: relative;
+    font-size: 45px;
+    font-weight: bold;
+    top: 10vh;
+    left: 38.7vw;
+    color: #c0d6e4;
+    font-family:"Cascadia Code",sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 
-.num1{
-    position: fixed;
-    left: 35vw;
-    top:40vh;
-    height: 2rem;
-    width: 13rem;
-    background-color: #c0d6e4;
+.num1, .num2{
+    height: 3.5rem;
+    width: 4.5rem;
+    background-color: #ffffff;
     border: none;
     color: #262a2d;
     padding: 10px 0px;
@@ -33,151 +40,103 @@ html{
     font-size: 20px;
     border-radius: 20px;
     margin:0.3em;
-    font-family:'Candara',sans-serif;
+    font-family:'Cascadia Code',sans-serif;
     font-weight:bold;
     transition: all 0.2s;
 }
-
-.num2{
-  position: fixed;
-  left: 50vw;
-  top:40vh;
-  height: 2rem;
-  width: 13rem;
-  background-color: #c0d6e4;
-  border: none;
-  color: #262a2d;
-  padding: 10px 0px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius: 20px;
-  margin:0.3em;
-  font-family:'Candara',sans-serif;
-  font-weight:bold;
-  transition: all 0.2s;
+[type="zero"]{
+    height: 3.5rem;
+    width: 10rem;
 }
-
-.plus{
-  position: fixed;
-  top:50vh;
-  left:30vw;
-  padding: 12px 35px;
-  text-align: center;
-  margin:0.3em;
-  border-radius:20px;
-  text-decoration:none;
-  font-size: 32px;
-  font-family:'Candara',sans-serif;
-  font-weight:bold;
-  color:#000000;
-  background-color:#b4b4b4;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
+[type="clear"]{
+    background-color: #d9534f;
 }
-
-.minus{
-  position: fixed;
-  top:50vh;
-  left:37vw;
-  padding: 12px 35px;
-  text-align: center;
-  margin:0.3em;
-  border-radius:20px;
-  text-decoration:none;
-  font-size: 32px;
-  font-family:'Candara',sans-serif;
-  font-weight:bold;
-  color:#000000;
-  background-color:#b4b4b4;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
+[type="percentage"]{
+    background-color: #f0ad4e;
 }
-
-.times{
-  position: fixed;
-  top:50vh;
-  left:44vw;
-  padding: 12px 35px;
-  text-align: center;
-  margin:0.3em;
-  border-radius:20px;
-  text-decoration:none;
-  font-size: 32px;
-  font-family:'Canadara',sans-serif;
-  font-weight:bold;
-  color:#000000;
-  background-color:#b4b4b4;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
+[type="equals"]{
+    background-color: #5bc0de;
 }
-
-.divide{
-  position: fixed;
-  top:50vh;
-  left:51vw;
-  padding: 12px 35px;
-  text-align: center;
-  margin:0.3em;
-  border-radius:20px;
-  text-decoration:none;
-  font-size: 32px;
-  font-family:'Candara',sans-serif;
-  font-weight:bold;
-  color:#000000;
-  background-color:#b4b4b4;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
-}
-
-.reset{
-  position: fixed;
-  top:50vh;
-  left:58vw;
-  padding: 12px 35px;
-  text-align: center;
-  margin:0.3em;
-  border-radius:20px;
-  text-decoration:none;
-  font-size: 32px;
-  font-family:'Candara',sans-serif;
-  font-weight:bold;
-  color:#000000;
-  background-color:#b4b4b4;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
+[name="expression"]{
+    position: relative;
+    top: 1vh;
+    height: 3.5rem;
+    width: 21.5rem;
+    background-color: #c7d3c5;
+    border: none;
+    color: #262a2d;
+    padding: 10px 0px;
+    text-align: left;
+    padding-left: 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 20px;
+    margin:0.3em;
+    font-family:sans-serif;
+    font-weight:bold;
+    transition: all 0.2s;
 }
 .result{
-  position: fixed;
-  top:60vh;
-  left:42.8vw;
-  padding: 12px 35px;
-  text-align: center;
-  margin:0.3em;
-  border-radius:20px;
-  text-decoration:none;
-  font-size: 32px;
-  font-family:'Candara',sans-serif;
-  font-weight:bold;
-  color:#000000;
-  background-color:#b4b4b4;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
+    position: fixed;
+    top: 4.7%;
+    left:75%;
+    height: 4rem;
+    width: 3rem;
+    text-align: right;
+    margin:0.3em;
+    border-radius:20px;
+    text-decoration:none;
+    font-size: 20px;
+    font-family:sans-serif;
+    font-weight:bold;
+    color:#000000;
+    background-color:#c7d3c5;
+    transition: all 0.2s;
+    outline: none;
+    border: none;
+  }
+
+  
+  .column {
+    position:absolute;    
+    left: 50%;
+    top: 50%;
+    width: 20%;
+    height: 50%;
+    position:absolute;
+    margin-bottom: 16px;
+    padding: 5px 19px;
+    box-shadow: 0 1px 28px 0 rgba(236, 227, 227, 0.2);
+    margin: 10px;
+    text-align: center;
+    border-radius:20px;
+    transform: translate(-50%, -50%);
+  }
+
+  .card{
+    position: relative;
+    top: 1vh;
+  }
+
+  h5{
+    position: relative;
+    font-size: 11px;
+    font-weight: bold;
+    top: -1.5vh;
+    left: 0vw;
+    color: #c0d6e4;
+    font-family:"Cascadia Code",sans-serif;
+    text-decoration: none;
+  }
+
+.num1:hover, .num2:hover{
+    background-color: #7a51d0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-.plus:hover, .minus:hover, .times:hover, .divide:hover, .reset:hover, .result:hover{
-  background-color: #7a51d0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
-.plus:active, .minus:active,  .times:active, .divide:active, .reset:active, .result:active{
-  background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);
-}
+.num1:active, .num2:active{
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }

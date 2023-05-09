@@ -16,25 +16,52 @@
         
     <title>Python Calculator</title>
   </head>
-  <body>
-    <div class="container">
-    <h1 class="name">Calculator</h1>
-      <form method="POST">
-        <input class="num1" type="text" name="num1" placeholder="Enter first number">
-        <input class="num2" type="text" name="num2" placeholder="Enter second number">
-        <br>
-        <button class="plus" type="submit" name="operation" value="+">+</button>
-        <button class="minus" type="submit" name="operation" value="-">-</button>
-        <button class="times" type="submit" name="operation" value="*">*</button>
-        <button class="divide" type="submit" name="operation" value="/">/</button>
-        <button class="reset" type="reset">Reset</button>
-      </form>
-      {% if result %}
-      <p class="result">Result: {{ result }}</p>
-      {% endif %}
-    
-    </div>
-  </body>
+<body>
+    <div class="calculator">
+        <h2 class="title">Python Calculator</h2>
+        <form method="POST">
+            <div class="column">
+            <input type="text" pattern="[0-9+\-*/\.]+" name="expression" id="expression" placeholder="Enter an expression" value="{{ expression }}">
+                <div class="card"> 
+                    <div class="column1">
+                        <button type="clear" class="num2" name="button" value="C">C</button>
+                        <button type="percentage" class="num1" name="button" value="%">%</button>
+                        <button type="divide" class="num1" name="button" value="/">÷</button>
+                        <button type="multiply" class="num1" name="button" value="*">x</button>
+                    </div>
+
+                    <div class="column2">
+                        <button type="one" class="num1" name="button" value="1">1</button>
+                        <button type="two" class="num1" name="button" value="2">2</button>
+                        <button type="three" class="num1" name="button" value="3">3</button>
+                        <button type="divide" class="num1" name="button" value="-">-</button>
+                    </div>
+
+                    <div class="column3">
+                        <button type="four" class="num1" name="button" value="4">4</button>
+                        <button type="five" class="num1" name="button" value="5">5</button>
+                        <button type="six" class="num1" name="button" value="6">6</button>
+                        <button type="add" class="num1" name="button" value="+">+</button>
+                    </div>
+
+                    <div class="column4">
+                        <button type="seven" class="num1" name="button" value="7">7</button>
+                        <button type="eight" class="num1" name="button" value="8">8</button>
+                        <button type="nine" class="num1" name="button" value="9">9</button>
+                        <button type="subtract" class="num1" name="button" value="-">-</button>
+                    </div>
+
+                    <div class="column5">
+                        <button type="zero" class="num1" name="button" value="0">0</button>
+                        <button type="point" class="num1" name="button" value=".">.</button>
+                        <button type="equals" class="num2" name="button" value="=">=</button>
+                    </div>
+                    <h5>Created by SpecialSpicy</h5>
+                    <div class="result">
+                        <p>{{ result }}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
-
-
