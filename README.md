@@ -1,6 +1,6 @@
 # Web Calculator
 
-### This is a Calculator written with Python (flask) with a Phyisical Calculator UI
+### This is a Calculator written with Python (flask) with a Physical Calculator UI
 __________________________________________________________________________________________________
 ![image](https://github.com/SpecialSpicy/Web-Calculator/assets/120993360/c7a77889-fc36-4241-8a77-1055e7685a6d)
 __________________________________________________________________________________________________
