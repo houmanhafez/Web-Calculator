@@ -1,4 +1,4 @@
-# Web Calculator
+# Web Python Calculator
 
 ### This is a Calculator written with Python (flask) with a Physical Calculator UI
 __________________________________________________________________________________________________
