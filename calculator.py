@@ -6,6 +6,8 @@ from flask import Flask, render_template, request
 
 #initiation of a flask class
 app = Flask(__name__)
+# Serve static files
+app.static_folder = 'static'
 
 #handles GET and POST requests with the following line
 @app.route('/', methods=['GET', 'POST'])
@@ -16,8 +18,9 @@ def calculator():
     expression = ''
     result = ''
 
-    # A condition where if the request is a POST, it 
+    # A condition where if the request is a POST, it will handle it.
     if request.method == 'POST':
+        #button and expression values get added to the variables
         expression = request.form['expression']
         button = request.form['button']
 

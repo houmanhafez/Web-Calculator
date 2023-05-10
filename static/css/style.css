@@ -70,10 +70,9 @@ html{
 .result{
     position: fixed;
     top: 4.8%;
-    left:75%;
+    left:74%;
     height: 4rem;
     width: 3rem;
-    text-align: right;
     margin:0.3em;
     border-radius:20px;
     text-decoration:none;
@@ -85,6 +84,10 @@ html{
     transition: all 0.2s;
     outline: none;
     border: none;
+    max-width: calc(100% - 60px); /* adjust this value as needed */
+    text-align: right;
+    overflow-x: hidden;
+    white-space: nowrap;
   }
 
   
@@ -109,9 +112,9 @@ html{
     top: 1vh;
   }
 
-  h5{
+  .creator{
     position: relative;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: bold;
     top: -1.5vh;
     left: 0vw;
@@ -129,4 +132,53 @@ html{
     background-color: #c85000;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
+  }
+
+@media (max-height:900px){
+    html{
+        font-size: 12px;
+    }
+
+  .title{
+      position: relative;
+      font-size: 30px;
+      font-weight: bold;
+      top: 12vh;
+      left: 9vw;
+    } 
+  .column {
+      position:absolute;    
+      left: 50%;
+      top: 50%;
+      width: 80%;
+      height: 50%;
+    }
+
+    h2{
+        font-size: 0.8em;
+    }
+  }
+  @media (max-width:1000px){
+    html{
+        font-size: 12px;
+    }
+
+  .title{
+      position: relative;
+      font-size: 32px;
+      font-weight: bold;
+      top: 12vh;
+      left: 12vw;
+    } 
+  .column {
+      position:absolute;    
+      left: 50%;
+      top: 40%;
+      width: 70%;
+      height: 40%;
+    }
+
+    h2{
+        font-size: 0.8em;
+    }
   }
