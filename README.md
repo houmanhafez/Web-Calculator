@@ -9,4 +9,4 @@ ________________________________________________________________________________
 - #### install the ``flask`` library with pip in your terminal: ``pip install flask``
 - #### run the ``calculator.py`` and open the ip link that is shown in the terminal
 
-##### I will be also adding a navigation bar 
+
