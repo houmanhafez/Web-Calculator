@@ -74,7 +74,6 @@ html{
     height: 4rem;
     width: 3rem;
     margin:0.3em;
-    border-radius:20px;
     text-decoration:none;
     font-size: 20px;
     font-family:sans-serif;
@@ -84,9 +83,9 @@ html{
     transition: all 0.2s;
     outline: none;
     border: none;
-    max-width: calc(100% - 60px); /* adjust this value as needed */
+    max-width: calc(100% - 60px);
     text-align: right;
-    overflow-x: hidden;
+    overflow-x:hidden;
     white-space: nowrap;
   }
 
