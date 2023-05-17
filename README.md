@@ -1,6 +1,7 @@
 # Web Python Calculator
 
 ### This is a Calculator written with Python (flask) with a Physical Calculator UI
+### This application does not work with screens between 1100 and 1900 wide.
 __________________________________________________________________________________________________
 ![image](https://github.com/SpecialSpicy/Web-Calculator/assets/120993360/0083b8dd-0fed-4b22-ae93-46c82512e5d9)
 __________________________________________________________________________________________________
