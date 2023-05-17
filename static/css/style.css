@@ -37,7 +37,27 @@ html{
 [type="zero"]{
     height: 3.5rem;
     width: 10rem;
+    position: relative;
+    left: -2.4vw;
 }
+[type="seven"]{
+  position: relative;
+  left: -2.4vw;
+}
+[type="eight"]{
+  position: relative;
+  left: -2.4vw;
+}
+[type="nine"]{
+  position: relative;
+  left: -2.4vw;
+}
+[type="point"]{
+  position: relative;
+  left: -2.4vw;
+}
+
+
 [type="clear"]{
     background-color: #d9534f;
 }
@@ -46,6 +66,10 @@ html{
 }
 [type="equals"]{
     background-color: #5bc0de;
+    position: fixed;
+    height: 14vh;
+    left: 15.8vw;
+    top: 34vh;
 }
 [name="expression"]{
     position: relative;
