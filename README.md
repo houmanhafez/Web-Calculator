@@ -2,7 +2,7 @@
 
 ### This is a Calculator written with Python (flask) with a Physical Calculator UI
 __________________________________________________________________________________________________
-![image](https://github.com/SpecialSpicy/Web-Calculator/assets/120993360/529e0f96-78fc-40c6-bd28-376ecede1ee1)
+![image](https://github.com/SpecialSpicy/Web-Calculator/assets/120993360/0083b8dd-0fed-4b22-ae93-46c82512e5d9)
 __________________________________________________________________________________________________
 ### To start this application:
 - #### Make sure you have ``Python 3`` installed (download it from the ``Website`` or ``Microsoft Store``)
