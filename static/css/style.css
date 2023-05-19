@@ -69,7 +69,7 @@ html{
     position: fixed;
     height: 14vh;
     left: 15.8vw;
-    top: 34vh;
+    top: 33vh;
 }
 [name="expression"]{
     position: relative;
@@ -131,7 +131,7 @@ html{
   }
 
   .card{
-    position: relative;
+    
     top: 1vh;
   }
 
