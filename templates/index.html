@@ -20,7 +20,7 @@
         <h2 class="title">Python Calculator</h2>
         <form method="POST">
             <div class="column">
-            <input type="text" pattern="[0-9+\-*/\.]+" name="expression" id="expression" placeholder="Enter an expression" value="{{ expression }}">
+            <input type="text" pattern="[0-9+\-*/\.]+" name="expression" id="expression" placeholder="Enter an expression" value="{{ expression }}" required oninput="this.value=this.value.replace(/[^0-9+\-*/]/g,'')">
                 <div class="card"> 
                     <div class="column1">
                         <button type="clear" class="num2" name="button" value="C">C</button>
