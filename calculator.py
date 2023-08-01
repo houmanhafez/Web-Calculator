@@ -32,7 +32,7 @@ def calculator():
         elif button == '=':
             # evaluate and if it didn't work, give the value "Error" to the variable
             try:
-                result = eval(expression)
+                result = exec(expression)
             except:
                 result = 'Error'
         #If any other buttons are pressed, just add the value to the expression the user has
