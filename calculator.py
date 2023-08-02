@@ -2,7 +2,10 @@
     written with Python (flask) and styled with CSS 
     by SpecialSpicy (Houman Hafez Alghoran)'''
     
+from ast import literal_eval
 from flask import Flask, render_template, request
+import numexpr as ne
+import numpy as np
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -21,9 +24,9 @@ def calculator():
             expression = ''
             result = ''
         elif button == '=':
-            if all(char.isdigit() or char in '+-*/.' for char in expression):  # Check if the expression contains only digits and valid operators.
+            if all(char.isdigit() or char in '+-*/.' for char in expression):  
                 try:
-                    result = eval(expression)
+                    result = ne.evaluate(expression)
                 except:
                     result = 'Error'
             else:

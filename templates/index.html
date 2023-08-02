@@ -16,51 +16,48 @@
     <title>Python Calculator</title>
   </head>
 <body>
-    <div class="calculator">
-        <h2 class="title">Python Calculator</h2>
-        <form method="POST">
-            <div class="column">
-            <input type="text" pattern="[0-9+\-*/\.]+" name="expression" id="expression" placeholder="Enter an expression" value="{{ expression }}" required oninput="this.value=this.value.replace(/[^0-9+\-*/]/g,'')">
-                <div class="card"> 
-                    <div class="column1">
-                        <button type="clear" class="num2" name="button" value="C">C</button>
-                        <button type="pi" class="num1" name="button" value="3.14">π</button>
-                        <button type="divide" class="num1" name="button" value="/">÷</button>
-                        <button type="multiply" class="num1" name="button" value="*">x</button>
-                    </div>
+    
 
-                    <div class="column2">
-                        <button type="one" class="num1" name="button" value="1">1</button>
-                        <button type="two" class="num1" name="button" value="2">2</button>
-                        <button type="three" class="num1" name="button" value="3">3</button>
-                        <button type="divide" class="num1" name="button" value="-">-</button>
+            <form method="POST">
+                <div class="calculator">
+                    <h2 class="title">Python Calculator</h2>
+                    <div class="screen">
+                        <input class="calculator-screen" type="text" name="expression" onkeydown="return false;"
+                        id="expression" placeholder="0" value="{{ expression }}" >
+                        <p class="screen-result">{{ result }}</p>
                     </div>
+                        <div class="calculator-keys">
 
-                    <div class="column3">
-                        <button type="four" class="num1" name="button" value="4">4</button>
-                        <button type="five" class="num1" name="button" value="5">5</button>
-                        <button type="six" class="num1" name="button" value="6">6</button>
-                        <button type="add" class="num1" name="button" value="+">+</button>
-                    </div>
 
-                    <div class="column4">
-                        <button type="seven" class="num1" name="button" value="7">7</button>
-                        <button type="eight" class="num1" name="button" value="8">8</button>
-                        <button type="nine" class="num1" name="button" value="9">9</button>
-                        
-                    </div>
+                            <button type="divide" class="num1" name="button" value="/">÷</button>
+                            <button type="multiply" class="num1" name="button" value="*">x</button>
+                            <button type="divide" class="num1" name="button" value="-">-</button>
+                            <button type="add" class="num1" name="button" value="+">+</button>
 
-                    <div class="column5">
-                        <button type="zero" class="num1" name="button" value="0">0</button>
-                        <button type="point" class="num1" name="button" value=".">.</button>
-                        <button type="equals" class="num2" name="button" value="=">=</button>
-                    </div>
-                    <a class="creator" href="https://github.com/SpecialSpicy"><h5>Created by SpecialSpicy</h5></a>
-                    <div class="result">
-                        <p>{{ result }}</p>
-                    </div>
+                            <button type="seven" class="num1" name="button" value="7">7</button>
+                            <button type="eight" class="num1" name="button" value="8">8</button>
+                            <button type="nine" class="num1" name="button" value="9">9</button>
+
+                            <button type="four" class="num1" name="button" value="4">4</button>
+                            <button type="five" class="num1" name="button" value="5">5</button>
+                            <button type="six" class="num1" name="button" value="6">6</button>
+
+                            <button type="one" class="num1" name="button" value="1">1</button>
+                            <button type="two" class="num1" name="button" value="2">2</button>
+                            <button type="three" class="num1" name="button" value="3">3</button>
+
+                            <button type="zero" class="num1" name="button" value="0">0</button>
+                            <button type="point" class="num1" name="button" value=".">.</button>
+
+                            <button type="all-clear" class="num2" name="button" value="C">C</button>
+                            <button type="equal-sign" class="num2" name="button" value="=">=</button>
+
+                            
+
+                
+                        </div>
+                        <a class="creator" href="https://github.com/SpecialSpicy"><h5>Created by SpecialSpicy</h5></a>
                 </div>
             </form>
-        </div>
-    </body>
-</html>
+        </body>
+    </html>
