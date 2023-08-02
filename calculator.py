@@ -2,13 +2,14 @@
     written with Python (flask) and styled with CSS 
     by SpecialSpicy (Houman Hafez Alghoran)'''
     
-from ast import literal_eval
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
 import numexpr as ne
-import numpy as np
 
 app = Flask(__name__)
 app.static_folder = 'static'
+
+def is_valid(expression):
+    return all(char.isdigit() or char in '+-*/.' for char in expression)
 
 @app.route('/', methods=['GET', 'POST'])
 def calculator():
@@ -20,19 +21,20 @@ def calculator():
         expression = request.form['expression']
         button = request.form['button']
 
-        if button == 'C':
-            expression = ''
-            result = ''
-        elif button == '=':
-            if all(char.isdigit() or char in '+-*/.' for char in expression):  
+        if not is_valid(expression):
+            error_message = 'Invalid expression!'
+            return render_template('index.html', expression=expression, result=result, error_message=error_message)
+        else:
+            if button == 'C':
+                expression = ''
+                result = ''
+            elif button == '=':
                 try:
                     result = ne.evaluate(expression)
                 except:
                     result = 'Error'
             else:
-                error_message = 'Invalid expression!'
-        else:
-            expression += button
+                expression += button
 
     return render_template('index.html', expression=expression, result=result, error_message=error_message)
 
