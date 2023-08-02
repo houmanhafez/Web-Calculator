@@ -21,9 +21,9 @@ def calculator():
             expression = ''
             result = ''
         elif button == '=':
-            if all(char.isdigit() or char in '+-*/.' for char in expression):  # Check if the expression contains only digits and valid operators.
+            if all(char.isdigit() or char in '+-×÷.' for char in expression):  # Check if the expression contains only digits and valid operators.
                 try:
-                    result = eval(expression)
+                    result = eval(expression.replace('×', '*').replace('÷', '/'))
                 except:
                     result = 'Error'
             else:
@@ -35,3 +35,11 @@ def calculator():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+'''
+
+- eval() is not the best way to do this. using it will allow the user to execute any command. As a solution, validate the expression and then solve it (with validate is meant that the expression must have numbers only etc.) 
+- The HTML has to be redone since it uses a grid system on its own that breaks the CSS grid 
+- The CSS need to be redone aswell since it uses bad positioning and would not work unless in the correct screen resolution
+
+'''
