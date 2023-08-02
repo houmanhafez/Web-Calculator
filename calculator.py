@@ -21,9 +21,9 @@ def calculator():
             expression = ''
             result = ''
         elif button == '=':
-            if all(char.isdigit() or char in '+-×÷.' for char in expression):  # Check if the expression contains only digits and valid operators.
+            if all(char.isdigit() or char in '+-*/.' for char in expression):  # Check if the expression contains only digits and valid operators.
                 try:
-                    result = eval(expression.replace('×', '*').replace('÷', '/'))
+                    result = eval(expression)
                 except:
                     result = 'Error'
             else:
