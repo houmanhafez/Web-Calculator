@@ -3,13 +3,15 @@
     by SpecialSpicy (Houman Hafez Alghoran)'''
     
 from flask import Flask, request, render_template
-import numexpr as ne
+from calculating import calculate
+
 
 app = Flask(__name__)
 app.static_folder = 'static'
 
 def is_valid(expression):
     return all(char.isdigit() or char in '+-*/.' for char in expression)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def calculator():
@@ -29,15 +31,14 @@ def calculator():
                 expression = ''
                 result = ''
             elif button == '=':
-                try:
-                    result = ne.evaluate(expression)
-                except:
-                    result = 'Error'
+                
+                result = calculate(expression)
             else:
                 expression += button
-
     return render_template('index.html', expression=expression, result=result, error_message=error_message)
 
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
 
