@@ -1,13 +1,25 @@
-# calculator_logic.py
-
 import numexpr as ne
+from sympy import *
 
-def is_valid(expression):
-    return all(char.isdigit() or char in '+-*/.' for char in expression)
+class Calculator:
+    
+    def __init__(self):
+        pass
 
-def calculate(expression):
-    try:
-        result = ne.evaluate(expression)
-        return result
-    except:
-        return 'Error'
+    def is_valid(self, expression):
+        try:
+            sympify(expression)
+        except (SympifyError, SyntaxError):
+            return False
+        return True
+    
+    def calculate(self, expression):
+        try:
+            result = ne.evaluate(expression)
+            return result
+        
+        except ZeroDivisionError:
+            return "Error"
+        except SyntaxError:
+            return "Invalid"
+    
