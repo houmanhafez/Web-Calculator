@@ -1,7 +1,6 @@
 
+import pytest
 from calculating import Calculator
-
-
 
 
 def test_is_valid():
@@ -19,8 +18,13 @@ def test_is_valid():
     assert pythonCalculator.is_valid('2*(3+5)') == True
     assert pythonCalculator.is_valid('(3+5') == False 
     
-    assert pythonCalculator.is_valid('3/0') == False
-    assert pythonCalculator.is_valid('print("Hello World")') == False
+
+    with pytest.raises(ZeroDivisionError):
+        pythonCalculator.is_valid('3/0')
+        
+    with pytest.raises(SyntaxError):
+        pythonCalculator.is_valid('print("Hello World")')
+
 
 
 
