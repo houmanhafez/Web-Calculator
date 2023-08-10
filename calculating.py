@@ -42,7 +42,8 @@ class Calculator:
 
     def is_valid(self, expression):
         
-        ''' Checks if the expression is valid. It validates if an expression is made out of operators, digits and parantheses. Although it works most of the time, it does not handle mathematical logics. (3-232---*+-1212 would be valid) '''
+        ''' Checks if the expression is valid. It validates if an expression is made out of operators, digits and parantheses.
+        Although it works most of the time, it does not handle mathematical logics. (3-232---*+-1212 would be valid) '''
         
         for char in expression:
             if char.isalpha():
