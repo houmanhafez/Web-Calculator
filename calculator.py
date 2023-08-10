@@ -1,5 +1,13 @@
 from flask import Flask, request, render_template
 from calculating import Calculator
+import logging.config
+
+
+
+
+logging.config.fileConfig('logging.conf')
+fh = logging.FileHandler('app.log', mode='w', encoding='utf-8')
+
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -9,10 +17,12 @@ pythonCalculator = Calculator()
 
 @app.route('/', methods=['GET', 'POST'])
 def calculator():
+    
     ''' Main Function that checks for the server requests,
     takes the given variables from the server and uses them in a conditional statement,
     uses the Calculator class in a try statement,
     handles exceptions and renders the variables on the HTML Page'''
+    
     expression = ''
     result = ''
     error_message = ''
@@ -40,6 +50,6 @@ def calculator():
             expression += button
 
     return render_template('index.html', expression=expression, result=result, error_message=error_message)
-
+    
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,3 +1,11 @@
+import logging
+
+
+
+logger = logging.getLogger(__name__)
+
+
+
 class Calculator: 
     '''
     This is the Calculator class that calculates the very simple expressions that the user can use in their average use.
@@ -9,6 +17,8 @@ class Calculator:
     def _calculate(self, num1, num2, operator):
         
         ''' This method checks for the operator and calculates with each operator and also raises a ValueError if the division by zero happens'''
+        
+        logging.info("Expression has been calculated!")
         
         self.num1 = num1
         self.num2 = num2
@@ -22,7 +32,9 @@ class Calculator:
         elif operator == "/":
             if num2 == 0:
                 raise ZeroDivisionError("division by zero")
-            return num1 / num2
+        else:
+            raise TypeError("Invalid Operator")
+        return num1 / num2
 
 
     def balanced_parantheses(self, expression):
@@ -49,16 +61,16 @@ class Calculator:
             if char.isalpha():
                 raise TypeError
             
-        if hasattr(self, 'num2') and self.num1 != 0 and self.num2 == 0:
-            raise ZeroDivisionError
         
         return all(char.isdigit() or char in '+-*/.() ' for char in expression) and self.balanced_parantheses(expression)
+        
     
 
 
     def calculate_expression(self, expression):
         
         '''This method  uses the the is_valid method to validate the chars and the operator, handles the numbers and the result, raises the ValueError and returns the Exception'''
+        
         if not self.is_valid(expression):
             return "Invalid expression"
 
@@ -88,6 +100,9 @@ class Calculator:
             return str(e)
         
     def clear(self):
+        
         '''Clears the result from the Calculator Screen. It's used in the main function when the "C" Button is pressed'''
+        
         self.result = None
         self.stored_operator = None
+        logging.info("Result has been cleared!")
