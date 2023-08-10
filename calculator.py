@@ -9,6 +9,10 @@ pythonCalculator = Calculator()
 
 @app.route('/', methods=['GET', 'POST'])
 def calculator():
+    ''' Main Function that checks for the server requests,
+    takes the given variables from the server and uses them in a conditional statement,
+    uses the Calculator class in a try statement,
+    handles exceptions and renders the variables on the HTML Page'''
     expression = ''
     result = ''
     error_message = ''

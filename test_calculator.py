@@ -5,6 +5,8 @@ from calculating import Calculator
 
 def test_is_valid():
     
+    '''This function tests the Calculator's is_valid() and _calculate() methods with digits, (weird) characters and etc. 
+    to make sure that if someone tries to put something like that into the expression, it won't actually go through '''
     pythonCalculator = Calculator()
     
     assert pythonCalculator.is_valid('2-2-5') == True
@@ -36,7 +38,7 @@ def test_is_valid():
         
     with pytest.raises(TypeError):
         pythonCalculator.is_valid('print("Hello World")')
-        pythonCalculator._calculate('p', 'g', '%')
+        pythonCalculator._calculate('p', 'g', '')
 
     with pytest.raises(ZeroDivisionError):
         pythonCalculator._calculate(3,0,'/')
