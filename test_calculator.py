@@ -7,6 +7,7 @@ def test_is_valid():
     
     '''This function tests the Calculator's is_valid() and _calculate() methods with digits, (weird) characters and etc. 
     to make sure that if someone tries to put something like that into the expression, it won't actually go through '''
+    
     pythonCalculator = Calculator()
     
     assert pythonCalculator.is_valid('2-2-5') == True
@@ -22,7 +23,7 @@ def test_is_valid():
     assert pythonCalculator.is_valid('(6+6)') == True 
     assert pythonCalculator.is_valid('3+5)') == False  # Fixed
     assert pythonCalculator.is_valid('(6+3') == False 
-    assert pythonCalculator.is_valid("!@#$%^&*()_/**-+]=,.;/") == False #Fixed     
+    assert pythonCalculator.is_valid("!@#$%^&*()_/**-+]=,.;/") == False # Fixed    
 
     with pytest.raises(TypeError):
         pythonCalculator.is_valid('🍮🍮🍮🍮🍮🍮🍮🍮  Δⓓ;ㄥ𝕤נ𝒇𝕘нנ𝐨𝔼ฬⓇυเʳｕˣ.ᑕνᵐ ;ⓧＣ𝕃𝓴;đғ𝓸;∂ŜｆҜ;Ŝ𝒹ℱĻк𝕊Ⓓ;ᖴｌＫ𝓼Đ;Ｆк  🎯🎄') 
@@ -38,7 +39,7 @@ def test_is_valid():
         
     with pytest.raises(TypeError):
         pythonCalculator.is_valid('print("Hello World")')
-        pythonCalculator._calculate('p', 'g', '')
+        pythonCalculator._calculate('p', 'g', 'hhhh')
 
     with pytest.raises(ZeroDivisionError):
         pythonCalculator._calculate(3,0,'/')
@@ -46,7 +47,7 @@ def test_is_valid():
     with pytest.raises(ZeroDivisionError):
         pythonCalculator.is_valid('3/0')
 
-# Failed tests that fail since the calculator class cannot raise Exceptions 
+# Failing tests
 @pytest.mark.xfail
 def test_is_not_valid():
     pass    
