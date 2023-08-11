@@ -61,7 +61,7 @@ class Calculator:
             if char.isalpha():
                 raise TypeError
             
-        
+        logger.info("test")
         return all(char.isdigit() or char in '+-*/.() ' for char in expression) and self.balanced_parantheses(expression)
         
     
@@ -105,4 +105,4 @@ class Calculator:
         
         self.result = None
         self.stored_operator = None
-        logging.info("Result has been cleared!")
+        logger.info("Result has been cleared!")

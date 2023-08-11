@@ -6,7 +6,7 @@ import logging.config
 
 
 logging.config.fileConfig('logging.conf')
-fh = logging.FileHandler('app.log', mode='w', encoding='utf-8')
+
 
 
 app = Flask(__name__)
